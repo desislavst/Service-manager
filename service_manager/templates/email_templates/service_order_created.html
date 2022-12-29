@@ -1,26 +1,25 @@
 {% load i18n %}
 {% autoescape off %}
-<h1>{% blocktrans %} A new service order has been created at ServiceManager.net{% endblocktrans %}</h1>
-<p>{% trans 'Dear' %}, {{ service_order.customer.name }}.</p>
-<p>{% blocktrans %}Please, be kindly informed that a new service order has been created for the following
-    asset:{% endblocktrans %}</p>
+<h1>{% blocktrans %} Нова сервизна поръчка е създадена на ServiceManager.net{% endblocktrans %}</h1>
+<p>{% trans 'Уважаеми' %}, {{ service_order.customer.name }}.</p>
+<p>{% blocktrans %}Уведомяваме Ви, че на нашият сайт е създадена сервизна поръчка за следният актив:{% endblocktrans %}</p>
 <p>{% trans 'Brand' %}: {{ service_order.customer_asset.asset.brand.name }}</p>
 <p>{% trans 'Model Name' %}: {{ service_order.customer_asset.asset.model_name }}</p>
 <p>{% trans 'Model Number' %}: {{ service_order.customer_asset.asset.model_number }}</p>
 <p>{% trans 'Serial Number' %}: {{ service_order.customer_asset.serial_number }}</p>
 <p>{% trans 'Product Number' %}: {{ service_order.customer_asset.product_number }}</p>
 <hr>
-<p>{% blocktrans %}The following service order has been created in our system{% endblocktrans %}
+<p>{% blocktrans %}Вашата сервизна поръчка е заведена в нашата система като{% endblocktrans %}
     : {{ service_order.ik }}</p>
-<p>{% blocktrans %}Created on date{% endblocktrans %}: {{ service_order.created_on }}</p>
+<p>{% blocktrans %}Създадена на{% endblocktrans %}: {{ service_order.created_on }}</p>
 <hr>
 {% if service_order.handedover_by %}
-    <p>{% blocktrans %}The device has been handed over by{% endblocktrans %} {{ service_order.handedover_by }}</p>
+    <p>{% blocktrans %}Актива е предаден на{% endblocktrans %} {{ service_order.handedover_by }}</p>
 {% endif %}
-<p>{% blocktrans %}We'll get back to you as soon as we make any progress with the resolution of your case.{% endblocktrans %}</p>
+<p>{% blocktrans %}Ще се свържем с Вас при предприети действия по поръчката.{% endblocktrans %}</p>
 
-{% trans "Thanks for using our site!" %}
+{% trans "Благодарим Ви, че използвате услугите ни!" %}
 
-{% blocktrans %}The Service Manager's team{% endblocktrans %}
+{% blocktrans %}Екипът на Елком Сервиз ЕООД{% endblocktrans %}
 
 {% endautoescape %}
